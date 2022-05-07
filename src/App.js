@@ -1,16 +1,15 @@
-import './App.css';
-import Header from './container/Header';
-import Auth from './container/Auth';
-import {userContextProvider} from "./context/userContext";
+import "./App.css";
+import Auth from "./container/Auth";
+import Header from "./container/Header";
+import { UserContextProvider } from "./context/userContext";
 
 function App() {
   return (
     <div className="ui container">
-      <userContextProvider >
-      <Header />
-      <Auth />
-      </userContextProvider>
-  
+      <UserContextProvider>
+        <Header />
+        <Auth />
+      </UserContextProvider>
     </div>
   );
 }

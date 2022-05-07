@@ -1,17 +1,24 @@
-import React from 'react'
+import React from "react";
+import { useUserContext } from "../context/userContext";
 
 const Header = () => {
-    const user = "Guest";
+  const { user, logOut } = useUserContext();
+  console.log(user);
   return (
-    <div className='ui fixed menu'>
-        <div className='ui container center'>
-            <h2>React Context API</h2>
-            <div className='profile'>
-                <h3>welcome, {user}</h3>
-            </div>
+    <div className="ui fixed menu">
+      <div className="ui container center">
+        <h2>React ContextApi</h2>
+        <div className="profile">
+          <h3>Welcome, {user.name}</h3>
+          {!user.isGuestUser && (
+            <button className="ui button blue" onClick={logOut}>
+              LogOut
+            </button>
+          )}
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
